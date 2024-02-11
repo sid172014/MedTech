@@ -1,5 +1,7 @@
+
+
 $(document).ready(function() {
-    // Define your list of diseases
+    //Define your list of diseases
     var diseases = [
         // A
         "Acute Flaccid Myelitis (AFM)",
@@ -100,6 +102,19 @@ $(document).ready(function() {
       
     ];
 
+
+    // const diseases = [];
+    // axios.get('http://localhost:3000/illness')
+    //     .then(function (response) {
+    //       // Handle success: Log the response data to the console
+    //       response.data.map((data) => {
+    //         diseases.push(data.condition);
+    //       })
+    //     })
+    //     .catch(function (error) {
+    //       // Handle error: Log the error to the console
+    //       console.error(error);
+    //     });
     // Initialize Autocomplete
     $("#medicalHistory").autocomplete({
       source: diseases,
