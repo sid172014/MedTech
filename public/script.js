@@ -28,7 +28,7 @@ h4all.forEach(function (elem) {
 
 // GSAP animation for changing the background color and height of #nav
 gsap.to("#nav", {
-    backgroundColor: "#000",
+    backgroundColor: "#321414",
     duration: 0.1,
     height: "100px",
     scrollTrigger: {
