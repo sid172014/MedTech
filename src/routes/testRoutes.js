@@ -10,7 +10,6 @@ const routes = new express.Router();
 routes.post('/' ,async (req,res) => {
     try{
         const items = await tests.find({
-            condition : "Acne"
         });
         res.send(items);
     }catch(e){
