@@ -1,11 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <!-- Metadata for character set and viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Title of the webpage -->
+  <title>MEDTECH</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://sidcupfamilygolf.com/wp-content/themes/puttosaurus/favicons/favicon-32x32.png"
+    type="image/x-icon" />
+  <!-- External stylesheet for icon fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- External stylesheet for custom styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- jQuery and jQuery UI -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
+
 <body>
-    
+  <!-- Navigation section -->
+  <div id="nav">
+    <img src="/public/stuff/logo-no-background.png" alt="" />
+    <ul>
+      <li><a href="">LOGIN</a></li>
+      <li><a href="">SIGN UP</a></li>
+    </ul>
+  </div>
+
+  <!-- Cursor elements -->
+  <div id="cursor"></div>
+
+  <!-- Video background -->
+  <video autoplay loop muted src="/public/stuff/1.mp4"></video>
+
+  <!-- Main content container -->
+  <div id="main">
+
+    <!-- Page 1 section -->
+    <div id="page1">
+      <h1>MEDTech</h1>
+      <h2>WELCOME TO SIDCUP FAMILY GOLF!</h2>
+      <p>
+        Sidcup Family Golf is a multipurpose golf facility located in Sidcup,
+        South East London. Passionate about technology, player development and
+        making golf fun and accessible to everyone.
+      </p>
+      <!-- <div id="arrow">
+        <i class="ri-arrow-down-line"></i>
+      </div> -->
+    </div>
+
+    <!-- Page 2 section -->
+    <div id="page2">
+      <!-- Scrolling navigation -->
+      <div id="scroller">
+        <div id="scroller-in">
+          <h4>Innovating Health, Transforming Lives.</h4>
+          <h4>Innovating Health, Transforming Lives.</h4>
+          <h4>Innovating Health, Transforming Lives.</h4>
+          <h4>Innovating Health, Transforming Lives.</h4>
+        </div>
+        <div id="scroller-in">
+          <h4>Innovating Health, Transforming Lives.</h4>
+          <h4>Innovating Health, Transforming Lives.</h4>
+          <h4>Innovating Health, Transforming Lives.</h4>
+          <h4>Innovating Health, Transforming Lives.</h4>
+        </div>
+
+      </div>
+
+      <div id="FORM">
+        <section class="appointment" id="appointment">
+
+          <div class="row">
+
+            <div class="image">
+              <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="">
+            </div>
+
+            <form action="#" method="post">
+
+              <h3>Make Appointment</h3>
+
+              <input type="text" name="name" placeholder="Your Name" class="box">
+
+              <input type="number" name="age" placeholder="Your Age" class="box">
+
+              <label for="gender">Gender:</label>
+              <select name="gender" class="box">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              
+
+              <label for="medicalHistory">Medical History:</label>
+              <div id="medicalHistoryContainer" class="tag-container">
+                <!-- Existing textarea for autocomplete -->
+                <div id="tagList"></div>
+                <input type="text" id="medicalHistory" placeholder="Add medical history" class="box">
+              </div>
+
+              <label for="lifestyleHistory">Lifestyle History:</label>
+              <textarea name="lifestyleHistory" placeholder="Enter your lifestyle history" class="box"></textarea>
+
+              <input type="submit" name="submit" value="Appointment Now" class="btn">
+
+            </form>
+
+
+          </div>
+
+        </section>
+      </div>
+    </div>
+
 </body>
+
+</html>
+
+
+      
+
+      <!-- Cards container section -->
+      <div id="cards-container">
+        <div class="card" id="card1">
+          <div class="overlay">
+            <h4>TopRacer Range</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+              quam molestias magni cupiditate architecto et enim quas facere
+              ipsum tempora?
+            </p>
+          </div>
+        </div>
+        <div class="card" id="card2">
+          <div class="overlay">
+            <h4>Adventure Golf</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+              quam molestias magni cupiditate architecto et enim quas facere
+              ipsum tempora?
+            </p>
+          </div>
+        </div>
+        <div class="card" id="card3">
+          <div class="overlay">
+            <h4>Golf Lessons</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+              quam molestias magni cupiditate architecto et enim quas facere
+              ipsum tempora?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Green div section -->
+      <div id="green-div">
+        <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
+        <h4>
+          SIGN UP FOR SIDCUP NEWS AND SPECIAL OFFERS STRAIGHT TO YOUR INBOX
+        </h4>
+        <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
+      </div>
+    </div>
+
+    <!-- Page 3 section -->
+    <div id="page3">
+      <p>
+        Excellent couple of hours, relax and enjoy in the fun. Staff were
+        accommodating, friendly and very helpful. Café on site for
+        refreshments etc. Will keep children entertained during the holidays.
+        Worth a visit if you haven’t been.
+      </p>
+      <img id="colon1" src="/public/stuff/left.svg" alt="" />
+      <img id="colon2" src="/public/stuff/right.svg" alt="" />
+    </div>
+
+  
+
+    <!-- Footer section -->
+    <div id="footer">
+      <!-- Dots image for decoration -->
+      <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
+      <!-- Footer columns with logo, links, and contact information -->
+      <div id="f1">
+        <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" alt="" />
+      </div>
+      <div id="f2">
+        <h3>TOPTRACER Ranges</h3>
+        <h3>Golf Lessons</h3>
+        <h3>Adventure Golf</h3>
+      </div>
+      <div id="f3">
+        <h3>coffee shop</h3>
+        <h3>LEAGUES</h3>
+        <h3>Contact us</h3>
+      </div>
+      <div id="f4">
+        <!-- Address and contact information -->
+        <h4>
+          A20, SIDCUP BYPASS <br />
+          CHISLEHURST <br />
+          KENT <br />
+          BR7 6RP <br />
+          TEL: 0208 309 0181 <br />
+          GET DIRECTIONS <br />
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- External scripts for animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+    integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
+    integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Custom script -->
+  <script src="script.js"></script>
+  <!-- Include the separate JavaScript file -->
+<script src="autocomplete.js"></script>
+
+</body>
+
 </html>
