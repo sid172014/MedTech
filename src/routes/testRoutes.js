@@ -9,11 +9,18 @@ const routes = new express.Router();
 
 routes.post('/' ,async (req,res) => {
     try{
-        const items = await tests.find({
+        const illnesses = ["Acne","Allergic rhinitis"];
+        const testsAssigned = [];
+        const promises = illnesses.map(async (data) => {   // A bunch of promises
+            const test = await tests.findOne({condition : data});
+            if(test){
+                testsAssigned.push(test.tests_combined);
+            }
         });
-        res.send(items);
+        await Promise.all(promises);    // Waits for all the promises to be resolved
+        res.send(testsAssigned);
     }catch(e){
-        res.send("Error Occured");
+        res.send(e.message);
     }
 });
 
