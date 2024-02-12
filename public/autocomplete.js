@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
   const diseases = [];
 
@@ -30,6 +32,14 @@ $(document).ready(function () {
   };
 
   function handleSubmit() {
+
+   // Trying to output testRecommendations
+   var values = document.getElementById('tagList').innerText;
+
+   console.log("Values ", values);
+    
+
+
     // Get form values
     var name = document.getElementById('name').value;
     var age = document.getElementById('age').value;
