@@ -18,6 +18,9 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="script.js"></script>
 
 </head>
 
@@ -26,7 +29,7 @@
   <div id="nav">
     <img src="/public/stuff/logo-no-background.png" alt="" />
     <ul>
-      <li ><a class="login-btn" href="">LOGIN | SIGNUP</a></li>
+      <li><a class="login-btn" href="">LOGIN | SIGNUP</a></li>
     </ul>
   </div>
 
@@ -71,8 +74,26 @@
         </div>
 
       </div>
+      <div class="container">
+        <form id="inputForm" onsubmit="return handleSubmit()">
+          <h2>Test Recommendation</h2>
+          <label for="name">Name:</label>
+          <input type="text" id="name" required><br>
+          <label for="age">Age:</label>
+          <input type="number" id="age" required><br>
+          <label for="history">Medical History:</label>
+          <input id="history" type="text" rows="4" required></input><br>
+          <div id="tagList" class="tag-list"></div> <!-- New tag list container -->
+          <button class="buttoncss"  type="submit">Submit</button>
+        </form>
+        <div id="outputBox" class="hidden">
+          <h2>Output</h2>
+          <p id="output"></p>
+          <button class="buttoncss" id="goBackButton" onclick="goBack()">Go Back</button>
+        </div>
+      </div>
 
-      <div id="FORM">
+      <!-- <div id="FORM">
         <section class="appointment" id="appointment">
 
           <div class="row">
@@ -95,138 +116,134 @@
                 <option value="female">Female</option>
                 <option value="other">Other</option>
               </select>
-              
+
 
               <label for="medicalHistory">Medical History:</label>
               <div id="medicalHistoryContainer" class="tag-container">
-                <!-- Existing textarea for autocomplete -->
+            
                 <div id="tagList"></div>
                 <input type="text" id="medicalHistory" placeholder="Add medical history" class="box">
               </div>
 
-              <label for="lifestyleHistory">Lifestyle History:</label>
-              <textarea name="lifestyleHistory" placeholder="Enter your lifestyle history" class="box"></textarea>
 
               <input type="submit" name="submit" value="Appointment Now" class="btn">
 
             </form>
 
+            <div id="outputBox" class="output-box" style="display: none;"></div>
+
 
           </div>
 
         </section>
-      </div>
+      </div> -->
     </div>
 
-</body>
 
-</html>
-
-
-      
-
-      <!-- Cards container section -->
-      <div id="cards-container">
-        <div class="card" id="card1">
-          <div class="overlay">
-            <h4>TopRacer Range</h4>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
-              quam molestias magni cupiditate architecto et enim quas facere
-              ipsum tempora?
-            </p>
-          </div>
-        </div>
-        <div class="card" id="card2">
-          <div class="overlay">
-            <h4>Adventure Golf</h4>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
-              quam molestias magni cupiditate architecto et enim quas facere
-              ipsum tempora?
-            </p>
-          </div>
-        </div>
-        <div class="card" id="card3">
-          <div class="overlay">
-            <h4>Golf Lessons</h4>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
-              quam molestias magni cupiditate architecto et enim quas facere
-              ipsum tempora?
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Green div section -->
-      <div id="green-div">
-        <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
-        <h4>
-          SIGN UP FOR SIDCUP NEWS AND SPECIAL OFFERS STRAIGHT TO YOUR INBOX
-        </h4>
-        <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
-      </div>
-    </div>
-
-    <!-- Page 3 section -->
-    <div id="page3">
+<!-- Cards container section -->
+<div id="cards-container">
+  <div class="card" id="card1">
+    <div class="overlay">
+      <h4>TopRacer Range</h4>
       <p>
-        Excellent couple of hours, relax and enjoy in the fun. Staff were
-        accommodating, friendly and very helpful. Café on site for
-        refreshments etc. Will keep children entertained during the holidays.
-        Worth a visit if you haven’t been.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+        quam molestias magni cupiditate architecto et enim quas facere
+        ipsum tempora?
       </p>
-      <img id="colon1" src="/public/stuff/left.svg" alt="" />
-      <img id="colon2" src="/public/stuff/right.svg" alt="" />
-    </div>
-
-  
-
-    <!-- Footer section -->
-    <div id="footer">
-      <!-- Dots image for decoration -->
-      <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
-      <!-- Footer columns with logo, links, and contact information -->
-      <div id="f1">
-        <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" alt="" />
-      </div>
-      <div id="f2">
-        <h3>TOPTRACER Ranges</h3>
-        <h3>Golf Lessons</h3>
-        <h3>Adventure Golf</h3>
-      </div>
-      <div id="f3">
-        <h3>coffee shop</h3>
-        <h3>LEAGUES</h3>
-        <h3>Contact us</h3>
-      </div>
-      <div id="f4">
-        <!-- Address and contact information -->
-        <h4>
-          A20, SIDCUP BYPASS <br />
-          CHISLEHURST <br />
-          KENT <br />
-          BR7 6RP <br />
-          TEL: 0208 309 0181 <br />
-          GET DIRECTIONS <br />
-        </h4>
-      </div>
     </div>
   </div>
+  <div class="card" id="card2">
+    <div class="overlay">
+      <h4>Adventure Golf</h4>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+        quam molestias magni cupiditate architecto et enim quas facere
+        ipsum tempora?
+      </p>
+    </div>
+  </div>
+  <div class="card" id="card3">
+    <div class="overlay">
+      <h4>Golf Lessons</h4>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+        quam molestias magni cupiditate architecto et enim quas facere
+        ipsum tempora?
+      </p>
+    </div>
+  </div>
+</div>
 
-  <!-- External scripts for animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
-    integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
-    integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- Custom script -->
-  <script src="script.js"></script>
-  <!-- Include the separate JavaScript file -->
+<!-- Green div section -->
+<div id="green-div">
+  <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
+  <h4>
+    SIGN UP FOR SIDCUP NEWS AND SPECIAL OFFERS STRAIGHT TO YOUR INBOX
+  </h4>
+  <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
+</div>
+</div>
+
+<!-- Page 3 section -->
+<div id="page3">
+  <p>
+    Excellent couple of hours, relax and enjoy in the fun. Staff were
+    accommodating, friendly and very helpful. Café on site for
+    refreshments etc. Will keep children entertained during the holidays.
+    Worth a visit if you haven’t been.
+  </p>
+  <img id="colon1" src="/public/stuff/left.svg" alt="" />
+  <img id="colon2" src="/public/stuff/right.svg" alt="" />
+</div>
+
+
+
+<!-- Footer section -->
+<div id="footer">
+  <!-- Dots image for decoration -->
+  <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
+  <!-- Footer columns with logo, links, and contact information -->
+  <div id="f1">
+    <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" alt="" />
+  </div>
+  <div id="f2">
+    <h3>TOPTRACER Ranges</h3>
+    <h3>Golf Lessons</h3>
+    <h3>Adventure Golf</h3>
+  </div>
+  <div id="f3">
+    <h3>coffee shop</h3>
+    <h3>LEAGUES</h3>
+    <h3>Contact us</h3>
+  </div>
+  <div id="f4">
+    <!-- Address and contact information -->
+    <h4>
+      A20, SIDCUP BYPASS <br />
+      CHISLEHURST <br />
+      KENT <br />
+      BR7 6RP <br />
+      TEL: 0208 309 0181 <br />
+      GET DIRECTIONS <br />
+    </h4>
+  </div>
+</div>
+</div>
+
+<!-- External scripts for animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+  integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
+  integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Custom script -->
+<script src="script.js"></script>
+<!-- Include the separate JavaScript file -->
 <script src="autocomplete.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 </body>
 

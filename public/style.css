@@ -8,7 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif; /* Setting default font */
-    color: #fff; /* Setting default text color */
+    /* color: #fff; Setting default text color */
 }
 
 /* Styling for HTML and body elements */
@@ -142,6 +142,8 @@ video {
     font-weight: 900;
     position: relative;
     font-family: 'Protest Revolution', sans-serif;
+    color: #fff;
+
 }
 
 /* Adding a text stroke effect to the main heading */
@@ -161,6 +163,8 @@ video {
     font-weight: 800;
     margin-top: 10px;
     margin-bottom: 20px;
+    color: #fff;
+
 }
 
 /* Styling for the paragraph in the first page section */
@@ -168,6 +172,8 @@ video {
     font-size: 1.2vw;
     font-weight: 500;
     width: 40%;
+    color: #fff;
+
 }
 
 /* Styling for the arrow icon in the first page section
@@ -354,6 +360,7 @@ video {
     white-space: nowrap;
     margin-bottom: 20px;
     font-weight: 800;
+    
 }
 
 /* Styling for the overlay paragraph */
@@ -417,6 +424,7 @@ video {
     width: 60%;
     line-height: 45px;
     text-align: center;
+    color: #fff;
 }
 
 /* Styling for the images in the third page section */
@@ -572,7 +580,7 @@ video {
 
 
 
-.appointment .row{
+/* .appointment .row{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -669,7 +677,7 @@ option{
 
   .tag {
     display: inline;
-    background-color: #ccc;
+    background-color: #6d293261;
     padding: 3px 5px;
     margin: 2px;
     border-radius: 5px;
@@ -678,4 +686,126 @@ option{
   .remove-tag {
     cursor: pointer;
     margin-left: 5px;
+  } */
+/* ---------------------------------------- */
+
+.container {
+    width: 100%;
+    height: 500px;
+    margin:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  
+  form, #outputBox {
+    margin: auto;
+    width: 550px;
+    height: 550px;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: #C7B7A3;
+     box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+  form h2{
+    font-size: 50px;
+    font-weight: 900;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    letter-spacing: 2px;
+  }
+  label{
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    color: #6D2932;
+    
+  }
+  #outputBox h2{
+    font-size: 50px;
+    font-weight: 900;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+
+  }
+  input[type=text] {
+    width: 100%;
+    color: #6D2932;
+    padding: 12px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color:#6D2932 ;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  }
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  .tag {
+    background-color: #6D2932;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  
+  .tag .remove-tag {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+button{
+    border-radius: 20px;
+    background-color: #6D2932;
+    font-weight: 600;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 12px 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left:39% ;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    
+}
+#outputBox p{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+
+}
