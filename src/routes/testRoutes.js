@@ -17,10 +17,11 @@ routes.get('/illness', async (req,res) => {
     }
 })
 
-routes.post('/' ,async (req,res) => {
+routes.post('/getillness' ,async (req,res) => {
     try{
-        const illnesses = ["Acne","Allergic rhinitis"];
-        const testsAssigned = [];
+        const illnesses = req.body.conditions;
+        const testsAssigned = []
+        console.log(illnesses);
         const promises = illnesses.map(async (data) => {   // A bunch of promises
             const test = await tests.findOne({condition : data});
             if(test){

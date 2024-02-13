@@ -1,8 +1,10 @@
 $(document).ready(function () {
   const diseases = [];
-
+  const userInputs = [];  // Concatenates the tests picked up by the user
   // Function to add a tag
   function addTag(value) {
+    // Pushing all the condition values to the array
+    userInputs.push(value);
     var tag = $('<div class="tag">' + value + '<span class="remove-tag" onclick="removeTag(this)">x</span></div>');
     $("#tagList").append(tag);
   }
@@ -48,12 +50,29 @@ $(document).ready(function () {
     var name = $("#name").val();
     var age = $("#age").val();
 
-    var history = $("#tagList").children(".tag").map(function () {
-      return $(this).text().slice(0, -1);
-    }).get().join(", ");
+    // var history = $("#tagList").children(".tag").map(function () {
+    //   return $(this).text().slice(0, -1);
+    // }).get().join(", ");
+
+
+    var tests_combined = [];
+    axios.post('http://localhost:3000/getillness', {
+      conditions: userInputs
+    }).then((response) => {
+      tests_combined = response.data;
+      console.log(tests_combined);
+
+      // Displaying the tests once the data has been fetched
+      var outputElement = $("#output");
+      outputElement.html(`Name: ${name}<br>Age: ${age}<br>Medical History: ${tests_combined[0]}`);
+
+    }).catch((e) => {
+      console.log(e.message);
+    });
+
 
     var outputElement = $("#output");
-    outputElement.html(`Name: ${name}<br>Age: ${age}<br>Medical History: ${history}`);
+    outputElement.html(`Name: ${name}<br>Age: ${age}<br>Medical History: ${tests_combined[0]}`);
 
     var form = $("#inputForm");
     form.css({ "transition": "1s", "transform": "translateX(-10%)" });
