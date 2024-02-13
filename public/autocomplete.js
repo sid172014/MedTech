@@ -64,7 +64,7 @@ $(document).ready(function () {
 
       // Displaying the tests once the data has been fetched
       var outputElement = $("#output");
-      outputElement.html(`Name: ${name}<br>Age: ${age}<br>Medical History: ${tests_combined[0]}`);
+      outputElement.html(`Name: ${name}<br>Age: ${age}<br>Medical History: ${tests_combined.map((data) => {return data})}`);
 
     }).catch((e) => {
       console.log(e.message);
