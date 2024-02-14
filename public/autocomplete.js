@@ -1,6 +1,10 @@
+
+
 $(document).ready(function () {
   const diseases = [];
   const userInputs = [];  // Concatenates the tests picked up by the user
+  const saveData = [];
+
   // Function to add a tag
   function addTag(value) {
     // Pushing all the condition values to the array
@@ -22,7 +26,7 @@ $(document).ready(function () {
 
   // Event listener for goBack button click
   $("#goBackButton").click(function () {
-    goBack();
+    sendUserInfo();
   });
 
   // Check if there are elements in the tag list, and adjust textarea requirement
@@ -60,11 +64,18 @@ $(document).ready(function () {
       conditions: userInputs
     }).then((response) => {
       tests_combined = response.data;
-      console.log(tests_combined);
+      saveData.push(response.data);
 
+      axios.post('http://localhost:3000/users/signup',{
+        username : name.toLowerCase(),
+        age : age,
+        userTestInfo:saveData
+      }).then((response) => {
+        console.log(response.data,"User Signed Up");
+      });
       // Displaying the tests once the data has been fetched
       var outputElement = $("#output");
-      outputElement.html(`Name: ${name}<br>Age: ${age}<br>Medical History: ${tests_combined.map((data) => {return data})}`);
+      outputElement.html(`Name: ${name}<br>Age: ${age}<br>Medical History: ${tests_combined.map((data) => {return data.tests_combined})}`);
 
     }).catch((e) => {
       console.log(e.message);
@@ -82,13 +93,18 @@ $(document).ready(function () {
   }
 
   // Function to go back to the input form
-  function goBack() {
+  function sendUserInfo() {
     var form = $("#inputForm");
     form.css({ "transition": "1s", "transform": "translateX(0)" });
 
     var outputBox = $("#outputBox");
     outputBox.addClass("hidden");
+    console.log("From the sendUserInfo button");
+    window.open('login.html','_blank');
   }
+
+
+
 
   // Initialize Autocomplete and fetch diseases from the server
   axios.get('http://localhost:3000/illness')
@@ -96,7 +112,6 @@ $(document).ready(function () {
       response.data.map((data) => {
         diseases.push(data.condition);
       });
-
       $("#history").autocomplete({
         source: diseases,
         select: function (event, ui) {

@@ -25,7 +25,7 @@ routes.post('/getillness' ,async (req,res) => {
         const promises = illnesses.map(async (data) => {   // A bunch of promises
             const test = await tests.findOne({condition : data});
             if(test){
-                testsAssigned.push(test.tests_combined);
+                testsAssigned.push(test);
             }
         });
         await Promise.all(promises);    // Waits for all the promises to be resolved

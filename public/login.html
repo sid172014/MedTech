@@ -13,24 +13,31 @@
         <input type="checkbox" id="chk" aria-hidden="true">
 
         <div class="signup">
-            <form>
+            <form id="signupForm">
                 <label for="chk" aria-hidden="true">Sign up</label>
-                <input type="text" name="txt" placeholder="User name" required="">
-                <input type="email" name="email" placeholder="Email" required="">
-                <input type="password" name="pswd" placeholder="Password" required="">
+                <input id="username" type="text" name="txt" placeholder="User name" required="">
+                <input id="email" type="email" name="email" placeholder="Email" required="">
+                <input id="password" type="password" name="pswd" placeholder="Password" required="">
+                <div id="display"></div>
                 <button>Sign up</button>
             </form>
         </div>
 
         <div class="login">
-            <form>
+            <form id="loginform">
                 <label for="chk" aria-hidden="true">Login</label>
-                <input type="email" name="email" placeholder="Email" required="">
-                <input type="password" name="pswd" placeholder="Password" required="">
+                <input  id="email" type="email" name="email" placeholder="Email" required="">
+                <input  id="password" type="password" name="pswd" placeholder="Password" required="">
+                <div id="displaylogin"></div>
                 <button>Login</button>
             </form>
         </div>
     </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="login.js"></script>
+
 </body>
 
 </html>

@@ -14,5 +14,28 @@ const testSchema = new mongoose.Schema({
     }
 });
 
+const userSchema = new mongoose.Schema({
+    username : {
+        type : String,
+        required : true,
+        unique : true
+    },
+    password :{
+      type : String
+    },
+    email : {
+        type : String
+    },
+    age:{
+        type : Number
+    },
+    userTestInfo : {
+        type : Array,
+        def : []
+    }
+})
+
 const tests = mongoose.model('tests', testSchema);
-module.exports = {tests};
+const users = mongoose.model('user',userSchema);
+
+module.exports = {tests, users};

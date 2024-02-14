@@ -117,6 +117,10 @@ gsap.from("#page4 h1", {
     },
 });
 
+function registerButton(){
+    const username = document.getElementById('name').value;
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
 
-
-
+    console.log(username,password,email);
+}
