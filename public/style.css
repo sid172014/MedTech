@@ -689,123 +689,103 @@ option{
   } */
 /* ---------------------------------------- */
 
-.container {
-    width: 100%;
+
+.main {
+    width: 400px;
     height: 500px;
-    margin:10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  form, #outputBox {
-    margin: auto;
-    width: 550px;
-    height: 550px;
-    padding: 12px 20px;
-    border: 2px solid #ccc;
+    background: red;
+    /* this will be overridden by the background image */
+    overflow: hidden;
+    margin-left: 38%;
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
     border-radius: 20px;
-    background-color: #C7B7A3;
-     box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  }
-  form h2{
-    font-size: 50px;
-    font-weight: 900;
-    font-family: 'Bebas Neue', sans-serif;
-    color: #fff;
-    text-align: center;
-    padding-bottom: 10px;
-    padding-top: 20px;
-    letter-spacing: 2px;
-  }
-  label{
-    font-size: 20px;
-    font-weight: 900;
-    font-family: 'Montserrat', sans-serif;
-    color: #6D2932;
-    
-  }
-  #outputBox h2{
-    font-size: 50px;
-    font-weight: 900;
-    font-family: 'Bebas Neue', sans-serif;
-    color: #fff;
-    text-align: center;
-    padding-bottom: 10px;
-    letter-spacing: 2px;
-
-  }
-  input[type=text] {
-    width: 100%;
-    color: #6D2932;
-    padding: 12px 20px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  }
-  input[type=number] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    color:#6D2932 ;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-  }
-  .tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-  }
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
   
-  .tag {
-    background-color: #6D2932;
-    color: white;
-    letter-spacing: 1px;
-    border-radius: 3px;
-    padding: 8px 10px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    font-family: 'Bebas Neue', sans-serif;
-  }
-  
-  .tag .remove-tag {
-    margin-left: 5px;
-    cursor: pointer;
-  }
-  
-  .hidden {
+  #chk {
     display: none;
-  }
-button{
-    border-radius: 20px;
-    background-color: #6D2932;
-    font-weight: 600;
-    border: none;
-    color: #fff;
-    font-size: 20px;
-    padding: 12px 20px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-left:39% ;
-    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
-    
 }
-#outputBox p{
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
 
+.signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
+.main{
+    background-color: #C7B7A3;
+}
+
+label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 70%;
+    height: 40px;
+    background: #fff;
+    justify-content: center;
+    display: flex;
+    margin: 13px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #6D2932;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    transition: .2s ease-in;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+
+button:hover {
+    background: #37271C;
+}
+
+.login {
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
+}
+
+.login label {
+    color: #6b2b38;
+    transform: scale(.6);
+}
+
+#chk:checked~.login {
+    transform: translateY(-500px);
+}
+
+#chk:checked~.login label {
+    transform: scale(1);
+}
+
+#chk:checked~.signup label {
+    transform: scale(.6);
+}
+ 

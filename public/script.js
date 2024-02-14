@@ -124,3 +124,25 @@ function registerButton(){
 
     console.log(username,password,email);
 }
+// script.js
+
+$(document).ready(function() {
+    // Smooth scrolling to form section when clicking on login or sign up links
+    $(".login-btn").click(function(e) {
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: $("#scroller-in").offset().top
+      }, 500);
+    });
+  
+    // You can add similar functionality for the login link if needed
+  
+  });
+  
+  function openPopupForm() {
+    document.getElementById("popupForm").style.display = "block";
+}
+
+function closePopupForm() {
+    document.getElementById("popupForm").style.display = "none";
+}

@@ -75,22 +75,31 @@
 
       </div>
       <div class="container">
-        <form id="inputForm" onsubmit="return handleSubmit()">
-          <h2>Test Recommendation</h2>
-          <label for="name">Name:</label>
-          <input type="text" id="name" required><br>
-          <label for="age">Age:</label>
-          <input type="number" id="age" required><br>
-          <label for="history">Medical History:</label>
-          <input id="history" type="text" rows="4" required></input><br>
-          <div id="tagList" class="tag-list"></div> <!-- New tag list container -->
-          <button class="buttoncss"  type="submit">Submit</button>
-        </form>
-        <div id="outputBox" class="hidden">
-          <h2>Output</h2>
-          <p id="output"></p>
-          <button class="buttoncss" id="goBackButton" onclick="sendUserInfo()">Get Doctors Recommendation and medical reminders</button>
-        </div>
+        <div  class="main">
+          <input type="checkbox" id="chk" aria-hidden="true">
+  
+          <div class="signup">
+              <form id="signupForm">
+                  <label for="chk" aria-hidden="true">Sign up</label>
+                  <input id="username" type="text" name="txt" placeholder="User name" required="">
+                  <input id="email" type="email" name="email" placeholder="Email" required="">
+                  <input id="password" type="password" name="pswd" placeholder="Password" required="">
+                  <input id="phone" type="text" name="phone" placeholder="Phone" required="">
+                  <div id="display"></div>
+                  <button>Sign up</button>
+              </form>
+          </div>
+  
+          <div class="login">
+              <form id="loginform">
+                  <label for="chk" aria-hidden="true">Login</label>
+                  <input  id="email" type="email" name="email" placeholder="Email" required="">
+                  <input  id="password" type="password" name="pswd" placeholder="Password" required="">
+                  <div id="displaylogin"></div>
+                  <button>Login</button>
+              </form>
+          </div>
+      </div>
       </div>
 
       <!-- <div id="FORM">
