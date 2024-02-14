@@ -29,6 +29,9 @@ const userSchema = new mongoose.Schema({
     age:{
         type : Number
     },
+    phone:{
+        type : Number
+    },
     userTestInfo : {
         type : Array,
         def : []

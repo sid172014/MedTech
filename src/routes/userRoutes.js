@@ -20,7 +20,8 @@ routes.patch('/users/signup',async (req,res) => {
             username : req.body.username.toLowerCase()
         },{
             password : req.body.password,
-            email : req.body.email
+            email : req.body.email,
+            phone : req.body.phone
         });
         res.send(user);
     }catch(e){
