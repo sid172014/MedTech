@@ -6,7 +6,14 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: 'Jost', sans-serif;
-    background: linear-gradient(to bottom, #6D2932, #481b22, #d68692);
+    background-color: black;
+}
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
 }
 
 .main {
@@ -16,8 +23,8 @@ body {
     /* this will be overridden by the background image */
     overflow: hidden;
     background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
-    border-radius: 10px;
-    box-shadow: 5px 20px 50px #000;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 #chk {
@@ -28,6 +35,9 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+}
+.main{
+    background-color: #C7B7A3;
 }
 
 label {
@@ -52,6 +62,7 @@ input {
     border: none;
     outline: none;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 button {
@@ -61,19 +72,21 @@ button {
     justify-content: center;
     display: block;
     color: #fff;
-    background: #5e1b2d;
+    background: #6D2932;
     font-size: 1em;
     font-weight: bold;
     margin-top: 20px;
     outline: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: .2s ease-in;
     cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 }
 
+
 button:hover {
-    background: #aa4861;
+    background: #37271C;
 }
 
 .login {
