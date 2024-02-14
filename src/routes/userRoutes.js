@@ -1,43 +1,71 @@
 const express = require('express');
-
-const {users} = require('../db/database');
+const path = require('path');
+const { users } = require('../db/database');
 
 const routes = new express.Router();
 
-routes.post('/users/signup',async (req,res) => {
-    try{
-        const user = new users(req.body);
-        await user.save();
-        res.send(user);
-    }catch(e){
+const signinmiddleware = require('../middlewares/signinmiddleware');
+
+routes.get('/', (req, res) => {
+    try {
+        res.render('index');
+    } catch (e) {
         res.send(e.message);
     }
 });
 
-routes.patch('/users/signup',async (req,res) => {
-    try{
-        const user = await users.updateOne({
-            username : req.body.username.toLowerCase()
-        },{
-            password : req.body.password,
-            email : req.body.email,
-            phone : req.body.phone
-        });
+routes.post('/users/signup', async (req, res) => {
+    try {
+        const user = new users(req.body);
+        await user.save();
         res.send(user);
-    }catch(e){
+    } catch (e) {
         res.send(e.message);
+    }
+});
+
+routes.post('/users/signin', signinmiddleware, async (req, res) => {
+    try {
+        res.send(req.user);
+    } catch (e) {
+        res.json({
+            error: "Error occured"
+        });
+    }
+});
+
+routes.get('/users/second/:id', async (req, res) => {
+    try {
+        const user = await users.findOne({
+            _id : req.params.id
+        });
+        console.log(user);
+        res.render('second',{
+            name : user.username,
+            phone : user.phone,
+            email : user.email
+        });
+    } catch (e) {
+        res.send("Invalid id");
+    }
+});
+
+routes.patch('/users/update/:id', async (req,res) =>{
+    try{
+        const updateUser = await users.updateOne({
+            _id : req.params.id
+        },{
+            phone : req.body.phone,
+            address : req.body.address
+        });
+        res.json({
+            message : "User updated"
+        })
+    }catch(e){
+        res.json({
+            error : "User not updated"
+        })
     }
 })
 
-routes.post('/users/signin', async(req,res) =>{
-    try{
-        const user = await users.findOne({email : req.body.email,password:req.body.password});
-        if(!user){
-            res.send("user does not exits");
-        }
-        res.send(user);
-    }catch(e){
-        console.log(e.message);
-    }
-})
 module.exports = routes;

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+}
+
+.container {
+    max-width: 800px;
+    background: transparent;
+    width: 800px;
+    padding: 25px 40px 10px 40px;
+    box-shadow: grey 3px 3px 6px 0px inset, grey -3px -3px 6px 1px inset;
+    border-radius: 10px;
+}
+
+h1{
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 5px;
+    color: #C7B7A3;
+
+} 
+h2 {
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 5px;
+    color: #6D2932;
+    margin-bottom: 5px;
+}
+
+.reminder-form {
+    background-color: #C7B7A3;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.reminder-form label {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 18px;
+}
+
+.reminder-form input[type="text"],
+.reminder-form input[type="tel"]{
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+#time{
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+#whatsapp{
+    font-size: 15px;
+}
+
+
+.reminder-form button {
+    border-radius: 20px;
+    display: block;
+    background-color: #6D2932;
+    font-weight: 300;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.reminder-form button:hover {
+    background-color:#2F1F14;
+}
+
+.reminder-list {
+    margin-top: 30px;
+    background-color: #C7B7A3;
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    margin-bottom: 20px;
+}
+
+.reminder-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reminder-list li {
+    margin-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 20px;
+    display: block;
+    background-color: #6D2932;
+    font-weight: 300;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+
+}
+a:hover {
+    background-color:#2F1F14;
+}
+
+::-webkit-input-placeholder {
+    color: red;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    color: red;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: red;  
+ }
+ 
+ :-ms-input-placeholder {  
+    color: red;  
+ }

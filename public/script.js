@@ -133,8 +133,7 @@ $(document).ready(function() {
       $('html, body').animate({
         scrollTop: $("#scroller-in").offset().top
       }, 500);
-    });
-  
+});
     // You can add similar functionality for the login link if needed
   
   });
@@ -146,3 +145,37 @@ $(document).ready(function() {
 function closePopupForm() {
     document.getElementById("popupForm").style.display = "none";
 }
+
+// Handling SignupForm 
+document.getElementById('signupForm').addEventListener('submit', function(event){
+    event.preventDefault();
+
+    const form = document.getElementById('signupForm');
+    const username = form.elements['username'].value;
+    const password = form.elements['password'].value;
+    const phone = form.elements['phone'].value;
+    const email = form.elements['email'].value;
+    
+    axios.post('http://localhost:3000/users/signup', {
+        username,password,phone,email
+    }).then(function(response){
+        console.log(response.data);
+        document.getElementById('display').innerText = "Registered";
+    });
+});
+
+// Handling loginForm
+document.getElementById('loginform').addEventListener('submit', function(event){
+    event.preventDefault();
+    
+    const form = document.getElementById('loginform');
+    const email = form.elements['email'].value;
+    const password = form.elements['password'].value;
+
+    axios.post('http://localhost:3000/users/signin', {
+        email,password
+    }).then(function(responose){
+        console.log(responose.data._id);
+        window.location.href = `/users/second/${responose.data._id}`;
+    });
+});

@@ -1,8 +1,8 @@
 const schedule = require('node-schedule');
 
 const triggerCall = (number) => {
-    const accountSid = "ACf382cb92769be8308a0b5e397b2d464b";
-    const authToken = "ffa02d33c01a2d2b93859fc7bf3934d4";
+    const accountSid = process.env.accountSid;
+    const authToken = process.env.authToken;
     const client = require('twilio')(accountSid, authToken);
 
     // Replace this with the user's dynamic phone number
@@ -24,11 +24,10 @@ const triggerCall = (number) => {
         .create({
             twiml: twiml,
             to: userPhoneNumber,
-            from: twilioPhoneNumber,
+            from: twilioPhoneNumber
         })
         .then(call => console.log(call.sid))
         .catch(error => console.error('Error:', error));
-
 }
 
 const whatsAppReminders = (number) => {
@@ -74,15 +73,26 @@ const whatsAppReminders = (number) => {
 };
 
 
-const scheduleReminders = (year, month, date, hour, minutes, seconds) => {
+const scheduleRemindersCall = (year, month, date, hour, minutes, seconds) => {
     // Define the schedule for 10 seconds from now
+   
     const reminderSchedule = new Date(`${year}-${month}-${date}T${hour}:${minutes}:${seconds}`); // Current time + 10 seconds
-
     // Schedule the reminder
     const reminderJob = schedule.scheduleJob(reminderSchedule, function () {
         // This function will be called when the reminder is due
-        whatsAppReminders('6201483923');
+        triggerCall();
+    });
+}
+const scheduleRemindersMessage = (year, month, date, hour, minutes, seconds) => {
+    // Define the schedule for 10 seconds from now
+   
+    const reminderSchedule = new Date(`${year}-${month}-${date}T${hour}:${minutes}:${seconds}`); // Current time + 10 seconds
+    // Schedule the reminder
+    const reminderJob = schedule.scheduleJob(reminderSchedule, function () {
+        // This function will be called when the reminder is due
+        whatsAppReminders('8804347052');
     });
 }
 
-scheduleReminders(2024,2,14,16,56,0);
+whatsAppReminders('8804347052');
+triggerCall();

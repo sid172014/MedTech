@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/second.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.1/css/datepicker.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.1/js/bootstrap-datepicker.min.js"></script>  
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <a href="#myModal" role="button" data-toggle="modal" style="text-decoration: none;color: white; background-color: #6D2932;">Edit Profile</a>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog" style="width:450px">     
+          <div class="modal-content" style="border:6px solid; border-color:#daf0ef">
+            
+            <div class="modal-body" style="width:100%; background:#C7B7A3; padding:50px">
+                  <input type="text" class="form-control" id="usr" value={{name}} disabled style="border-color:#9dd8d5">             
+                  
+                  <div class="row" style="margin-top:25px;">
+                    <div class="col-md-4">GENDER</div>
+                    
+                    <div class="col-md-4">
+                       <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"  checked > Male
+                       </label>
+                    </div>
+                    
+                    <div class="col-md-4" >
+                        <label class="radio-inline">
+                          <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Female
+                        </label>
+                    </div> 
+                    
+                  </div>
+                  
+                  <div class="row" style="margin-top:25px;">
+                      
+                 </div>
+              
+                <input type="text" class="form-control" id="phone" placeholder={{phone}} style="margin-top:25px;border-color:#9dd8d5">   
+                <input type="text" class="form-control" id="address" placeholder="ADDRESS" style="margin-top:25px;border-color:#9dd8d5"> 
+                <input type="email" class="form-control" id="email" value={{email}} disabled style="margin-top:25px;border-color:#9dd8d5">        
+            </div>
+            <div class="modal-footer" style="width:100%; background:#f2faf9;">
+              <center><button id="save" type="submit" class="btn btn-default" data-dismiss="modal" style="background:#6D2932; color:#fff">Save</button></center>
+            </div>
+        </div>
+      </div>
+     </div>
+    
+    <video autoplay muted loop src="/stuff/2.mp4"></video>
+    <div class="container">
+        <h1 style="color: white; padding: 10px; cursor: pointer;font-family: 'Bebas Neue', sans-serif;letter-spacing: 5px;color: #C7B7A3;">Medical Condition :</h1>
+        <div class="reminder-form">
+            <form id="reminderForm">
+                <label for="medicine">Medical History</label>
+                <input type="text" id="medicine" name="medicine" required>
+                
+                <label for="">Symptoms</label>
+                <input type="text" id="symptoms" name="symptoms" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/second.js"></script>
+</body>
+</html>
