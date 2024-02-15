@@ -87,6 +87,5 @@ const scheduleRemindersCall = (datetime,number) => {
     });
 };
 
-whatsAppReminders('9955513164');
 module.exports = scheduleRemindersCall
 

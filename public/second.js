@@ -21,6 +21,27 @@ document.getElementById('medRem').addEventListener("click", function(){
   window.location.href = `http://localhost:3000/users/call/${split[3]}`
 })
 
+
+
+// -------------------------------------------------------------------------------------------------------------------------
+
+document.getElementById('save').addEventListener('click', function(){ 
+  const phone = document.getElementById('phone').value;
+  const address = document.getElementById('address').value;
+  const split = window.location.pathname.split('/');
+
+  axios.patch(`http://localhost:3000/users/update/${split[3]}`, {
+    phone,address
+  }).then(function(response){
+    console.log(response.data);
+  });
+})
+
+document.getElementById('medRem').addEventListener("click", function(){ 
+  const split = window.location.pathname.split('/');
+  window.location.href = `http://localhost:3000/users/call/${split[3]}`
+})
+
 // -------------------------------------------------------------------------------------------------------------------------
 const search = document.querySelector('.input-group input'),
     table_rows = document.querySelectorAll('tbody tr'),
@@ -225,4 +246,10 @@ const downloadFile = function (data, fileType, fileName = '') {
     a.click();
     a.remove();
 }
-// ---------------------------------------------
+
+
+
+
+
+
+
