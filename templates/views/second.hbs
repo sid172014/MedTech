@@ -68,11 +68,21 @@
         <h1 style="color: white; padding: 10px; cursor: pointer;font-family: 'Bebas Neue', sans-serif;letter-spacing: 5px;color: #C7B7A3;">Medical Condition :</h1>
         <div class="reminder-form">
             <form id="reminderForm">
+                  <div id="medicalHistoryContainer" class="tag-container">
                 <label for="medicine">Medical History</label>
+              
+                
                 <input type="text" id="medicalHistory" name="medicine" required>
+                
+                <div id="tagList"></div>
                 
                 <label for="">Symptoms</label>
                 <input type="text" id="symptoms" name="symptoms" required>
+                
+                     <div id="symptomsTagList"></div>
+                </div>
+               
+                
                 <button type="submit">Submit</button>
             </form>
         </div>
