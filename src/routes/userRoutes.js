@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const { users } = require('../db/database');
+const scheduleRemindersCall = require('../utils/medicalReminders');
 
 const routes = new express.Router();
 
@@ -65,6 +66,40 @@ routes.patch('/users/update/:id', async (req,res) =>{
         res.json({
             error : "User not updated"
         })
+    }
+});
+
+routes.get('/users/call/:id',async (req,res) => {
+    try{
+        const user = await users.findOne({
+            _id : req.params.id
+        });
+        res.render('scriptreminder', {
+
+        });
+    }catch(e){
+        res.send(e.message);
+    }
+});
+
+routes.post('/users/call/:id',async (req,res) => {
+    try{
+        const user = await users.findOne({
+            _id : req.params.id
+        });
+        
+        const medicine = req.body.medicine;
+        const time = req.body.dateTime;
+        const number = req.body.number;
+
+        scheduleRemindersCall(time,number);
+        res.json({
+            message : "Success"
+        });
+    }catch(e){
+        res.json({
+            error : "Error"
+        });
     }
 })
 

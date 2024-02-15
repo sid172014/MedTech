@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Reminder</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <video
+      autoplay
+      muted
+      loop
+      src="/stuff/034 Dynamic brown abstract pattern photography&video background video material for video producer (2).mp4"
+    ></video>
+    <div class="container">
+      <h1>Medical Reminder :</h1>
+      <div class="reminder-form">
+        <h2>Set a Reminder :</h2>
+        <form id="reminderForm">
+          <label for="medicine">Medicine:</label>
+          <input type="text" id="medicine" name="medicine" required />
+
+          <label for="datetime">Date and Time:</label>
+          <input type="datetime-local" id="datetime" name="datetime" required />
+
+          <label for="whatsapp">WhatsApp Number:</label>
+          <input
+            type="tel"
+            id="whatsapp"
+            name="whatsapp"
+            placeholder="Enter your WhatsApp number"
+          />
+          <p class="whatsapp-description">
+            If you want to receive reminders via WhatsApp, please provide your
+            WhatsApp number.
+          </p>
+          <button type="submit">Set Reminder</button>
+        </form>
+      </div>
+      <div class="reminder-list">
+        <h2>Upcoming Reminders :</h2>
+        <ul id="reminderList"></ul>
+      </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/scriptreminder.js"></script>
+    <script src="./call_reminder/index.js"></script>
+  </body>
+</html>
