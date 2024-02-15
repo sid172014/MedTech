@@ -630,3 +630,32 @@ thead th.active,tbody td.active {
 .icon-arrow {
     size: 24px; /* Adjust the size as needed *//* Align the icon vertically */
 }
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  .tag {
+    background-color: #6D2932;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    padding: 4px 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    width: 20%;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  
+  .tag .remove-tag {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
