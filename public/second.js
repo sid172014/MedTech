@@ -13,7 +13,12 @@ document.getElementById('save').addEventListener('click', function(){
     phone,address
   }).then(function(response){
     console.log(response.data);
-  })
+  });
+})
+
+document.getElementById('medRem').addEventListener("click", function(){ 
+  const split = window.location.pathname.split('/');
+  window.location.href = `http://localhost:3000/users/call/${split[3]}`
 })
 
 // -------------------------------------------------------------------------------------------------------------------------

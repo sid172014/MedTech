@@ -73,26 +73,20 @@ const whatsAppReminders = (number) => {
 };
 
 
-const scheduleRemindersCall = (year, month, date, hour, minutes, seconds) => {
+const scheduleRemindersCall = (datetime,number) => {
     // Define the schedule for 10 seconds from now
    
-    const reminderSchedule = new Date(`${year}-${month}-${date}T${hour}:${minutes}:${seconds}`); // Current time + 10 seconds
+    // const reminderSchedule = new Date(`${year}-${month}-${date}T${hour}:${minutes}:${seconds}`); // Current time + 10 seconds
+    const reminderSchedule = new Date(datetime); // Current time + 10 seconds
+    
     // Schedule the reminder
     const reminderJob = schedule.scheduleJob(reminderSchedule, function () {
         // This function will be called when the reminder is due
         triggerCall();
+        whatsAppReminders(number);
     });
-}
-const scheduleRemindersMessage = (year, month, date, hour, minutes, seconds) => {
-    // Define the schedule for 10 seconds from now
-   
-    const reminderSchedule = new Date(`${year}-${month}-${date}T${hour}:${minutes}:${seconds}`); // Current time + 10 seconds
-    // Schedule the reminder
-    const reminderJob = schedule.scheduleJob(reminderSchedule, function () {
-        // This function will be called when the reminder is due
-        whatsAppReminders('8804347052');
-    });
-}
+};
 
-whatsAppReminders('8804347052');
-triggerCall();
+whatsAppReminders('9955513164');
+module.exports = scheduleRemindersCall
+
